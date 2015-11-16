@@ -485,6 +485,7 @@
 				8C438AD41BF9DF09002D2869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C438AD51BF9DF09002D2869 /* Build configuration list for PBXNativeTarget "aplhaDexTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +494,7 @@
 				8C438AD71BF9DF09002D2869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C438AD81BF9DF09002D2869 /* Build configuration list for PBXNativeTarget "aplhaDexUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +503,7 @@
 				8C438ADA1BF9DF09002D2869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
