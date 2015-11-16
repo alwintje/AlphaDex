@@ -4,13 +4,16 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,12 +49,14 @@ import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    public static String websiteAdres = "http://10.125.100.243/school/alphaDex/api.php";
+//    public static String websiteAdres = "http://10.125.100.243/school/alphaDex/api.php";
+//    public static String websiteAdres = "http://172.20.99.49/school/alphaDex/api.php";
+    public static String websiteAdres = "http://192.168.1.58/school/alphaDex/api.php";
 //    public static String websiteAdres = "http://192.168.42.111/school/alphaDex/api.php";
 
     private GridView imageGrid;
     private ArrayList<Bitmap> bitmapList;
-
+    private SwipeRefreshLayout swipeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,49 +68,27 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
 
-//        AsyncTask getItems = new getItems().execute("?items");
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeLayout.setRefreshing(false);
+                    }
+                }, 5000);
+            }
+        });
+        swipeLayout.setColorSchemeResources(R.color.colorPokemonGreen,R.color.colorPokemonYellow, R.color.colorPokemonRed, R.color.colorPokemonOrange);
+                swipeLayout.setProgressBackgroundColorSchemeResource(R.color.colorPokemonBlue);
 
 
-
-//        GridView gridView = (GridView) findViewById(R.id.grid);
-//
-//        gridView.setAdapter(new ImageAdapter(this));
-//
-//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> parent, View v,
-//                                    int position, long id) {
-//                Toast.makeText(
-//                        getApplicationContext(),"test", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-        //TableRow item1 = (TableRow) findViewById(R.id.item1);
-        //item1.setBackground(img1);
-
-//        ImageView image1 = (ImageView) findViewById(R.id.img1);
-//        image1.setImageDrawable(img1);
-//        ImageView image2 = (ImageView) findViewById(R.id.img2);
-//        image2.setImageDrawable(img2);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.setDrawerListener(toggle);
-//        toggle.syncState();
-//
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(this);
-
+//        swipeLayout.setColorSchemeColors(android.R.color.holo_blue_bright,
+//                android.R.color.holo_green_light,
+//                android.R.color.holo_orange_light,
+//                android.R.color.holo_red_light);
 
         this.imageGrid = (GridView) findViewById(R.id.grid);
         this.bitmapList = new ArrayList<Bitmap>();
@@ -296,7 +279,6 @@ public class MainActivity extends AppCompatActivity
 //        return result;
 //
 //    }
-
     private Bitmap urlImageToBitmap(String imageUrl) throws Exception {
         Bitmap result = null;
         URL url = new URL(imageUrl);
