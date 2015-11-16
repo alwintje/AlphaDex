@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  aplhaDex
+//  alphaDex
 //
 //  Created by Jordy Groote on 16-11-15.
 //  Copyright © 2015 Jordy Groote. All rights reserved.

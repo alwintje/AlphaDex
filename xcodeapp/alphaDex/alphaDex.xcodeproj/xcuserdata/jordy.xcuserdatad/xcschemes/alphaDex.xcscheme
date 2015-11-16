@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C438AA91BF9DF09002D2869"
-               BuildableName = "aplhaDex.app"
-               BlueprintName = "aplhaDex"
-               ReferencedContainer = "container:aplhaDex.xcodeproj">
+               BlueprintIdentifier = "8C968EBC1BF9E5B000D0205F"
+               BuildableName = "alphaDex.app"
+               BlueprintName = "alphaDex"
+               ReferencedContainer = "container:alphaDex.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C438ABD1BF9DF09002D2869"
-               BuildableName = "aplhaDexTests.xctest"
-               BlueprintName = "aplhaDexTests"
-               ReferencedContainer = "container:aplhaDex.xcodeproj">
+               BlueprintIdentifier = "8C968ED01BF9E5B000D0205F"
+               BuildableName = "alphaDexTests.xctest"
+               BlueprintName = "alphaDexTests"
+               ReferencedContainer = "container:alphaDex.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C438AC81BF9DF09002D2869"
-               BuildableName = "aplhaDexUITests.xctest"
-               BlueprintName = "aplhaDexUITests"
-               ReferencedContainer = "container:aplhaDex.xcodeproj">
+               BlueprintIdentifier = "8C968EDB1BF9E5B000D0205F"
+               BuildableName = "alphaDexUITests.xctest"
+               BlueprintName = "alphaDexUITests"
+               ReferencedContainer = "container:alphaDex.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C438AA91BF9DF09002D2869"
-            BuildableName = "aplhaDex.app"
-            BlueprintName = "aplhaDex"
-            ReferencedContainer = "container:aplhaDex.xcodeproj">
+            BlueprintIdentifier = "8C968EBC1BF9E5B000D0205F"
+            BuildableName = "alphaDex.app"
+            BlueprintName = "alphaDex"
+            ReferencedContainer = "container:alphaDex.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C438AA91BF9DF09002D2869"
-            BuildableName = "aplhaDex.app"
-            BlueprintName = "aplhaDex"
-            ReferencedContainer = "container:aplhaDex.xcodeproj">
+            BlueprintIdentifier = "8C968EBC1BF9E5B000D0205F"
+            BuildableName = "alphaDex.app"
+            BlueprintName = "alphaDex"
+            ReferencedContainer = "container:alphaDex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C438AA91BF9DF09002D2869"
-            BuildableName = "aplhaDex.app"
-            BlueprintName = "aplhaDex"
-            ReferencedContainer = "container:aplhaDex.xcodeproj">
+            BlueprintIdentifier = "8C968EBC1BF9E5B000D0205F"
+            BuildableName = "alphaDex.app"
+            BlueprintName = "alphaDex"
+            ReferencedContainer = "container:alphaDex.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

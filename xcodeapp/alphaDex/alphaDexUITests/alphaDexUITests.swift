@@ -1,6 +1,6 @@
 //
-//  aplhaDexUITests.swift
-//  aplhaDexUITests
+//  alphaDexUITests.swift
+//  alphaDexUITests
 //
 //  Created by Jordy Groote on 16-11-15.
 //  Copyright © 2015 Jordy Groote. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class aplhaDexUITests: XCTestCase {
+class alphaDexUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

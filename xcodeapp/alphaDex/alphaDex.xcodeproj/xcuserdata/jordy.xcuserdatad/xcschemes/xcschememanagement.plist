@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>aplhaDex.xcscheme</key>
+		<key>alphaDex.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8C438AA91BF9DF09002D2869</key>
+		<key>8C968EBC1BF9E5B000D0205F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8C438ABD1BF9DF09002D2869</key>
+		<key>8C968ED01BF9E5B000D0205F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8C438AC81BF9DF09002D2869</key>
+		<key>8C968EDB1BF9E5B000D0205F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
