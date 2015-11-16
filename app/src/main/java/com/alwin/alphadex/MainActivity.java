@@ -2,6 +2,8 @@ package com.alwin.alphadex;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.AsyncTask;
@@ -39,13 +41,18 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-//    public static String websiteAdres = "http://10.125.100.117/school/alphaDex/";
-//    public static String websiteAdres = "http://10.125.100.233/school/alphaDex/api.php";
-    public static String websiteAdres = "http://192.168.42.111/school/alphaDex/api.php";
+    public static String websiteAdres = "http://10.125.100.243/school/alphaDex/api.php";
+//    public static String websiteAdres = "http://192.168.42.111/school/alphaDex/api.php";
+
+    private GridView imageGrid;
+    private ArrayList<Bitmap> bitmapList;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,18 +68,18 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        GridView gridView = (GridView) findViewById(R.id.grid);
-
-        gridView.setAdapter(new ImageAdapter(this));
-
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                Toast.makeText(
-                        getApplicationContext(),"test", Toast.LENGTH_SHORT).show();
-
-            }
-        });
+//        GridView gridView = (GridView) findViewById(R.id.grid);
+//
+//        gridView.setAdapter(new ImageAdapter(this));
+//
+//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            public void onItemClick(AdapterView<?> parent, View v,
+//                                    int position, long id) {
+//                Toast.makeText(
+//                        getApplicationContext(),"test", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
         //TableRow item1 = (TableRow) findViewById(R.id.item1);
         //item1.setBackground(img1);
 
@@ -90,14 +97,67 @@ public class MainActivity extends AppCompatActivity
 //            }
 //        });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.setDrawerListener(toggle);
+//        toggle.syncState();
+//
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+
+        this.imageGrid = (GridView) findViewById(R.id.grid);
+        this.bitmapList = new ArrayList<Bitmap>();
+
+        try {
+
+            InputStream inputStream;
+            String result = "";
+            try {
+                URL url = new URL(MainActivity.websiteAdres + "?items");
+                URLConnection urlConnection = url.openConnection();
+                inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                result = inputStream != null ? convertInputStreamToString(inputStream) : "false";
+
+            } catch (Exception e) {
+                Log.d("InputStream", "" + e.getLocalizedMessage());
+                Log.d("InputStream", ""+e.toString());
+                result = "false";
+            }
+
+            if(result != "false" && result != "") {
+                try {
+                    JSONArray items = new JSONArray(result);
+
+                    for(int i=0;i<items.length();i++){
+                        try{
+                            JSONObject item = new JSONObject(items.get(i).toString());
+
+    //                        Drawable img = LoadImageFromWebOperations(item.getString("image"));
+    //                        thumbs[thumbs.length] = img;
+                            this.bitmapList.add(urlImageToBitmap(item.getString("image")));
+
+                        }catch (Exception e) {
+                            Log.d("error", e.toString());
+                        }
+                    }
+
+                } catch (Exception e) {
+                    Log.d("error", e.toString());
+                }
+            }
+//            for(int i = 0; i < 10; i++) {
+//                this.bitmapList.add(urlImageToBitmap("http://placehold.it/150x150"));
+//            }
+        } catch (Exception e) {
+//            e.printStackTrace();
+            Log.d("error", e.toString());
+        }
+
+        this.imageGrid.setAdapter(new ImageAdapter(this, this.bitmapList));
+
+
     }
 
     @Override
@@ -146,6 +206,20 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    private static String convertInputStreamToString(InputStream inputStream) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+        String line = "";
+        String result = "";
+        while((line = bufferedReader.readLine()) != null)
+            result += line;
+
+        inputStream.close();
+        return result;
+
+    }
+
 //    public static Drawable LoadImageFromWebOperations(String url) {
 //        try {
 //            InputStream is = (InputStream) new URL(url).getContent();
@@ -222,4 +296,13 @@ public class MainActivity extends AppCompatActivity
 //        return result;
 //
 //    }
+
+    private Bitmap urlImageToBitmap(String imageUrl) throws Exception {
+        Bitmap result = null;
+        URL url = new URL(imageUrl);
+        if(url != null) {
+            result = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+        }
+        return result;
+    }
 }
