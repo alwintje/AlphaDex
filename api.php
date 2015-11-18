@@ -20,16 +20,17 @@ $db->opendb();
                 "name" => $row['name'],
                 "image" => $row['image'],
             ];
-            $items[] = [
-                "id" => $row['id'],
-                "name" => $row['name'],
-                "image" => $row['image'],
-            ];
-            $items[] = [
-                "id" => $row['id'],
-                "name" => $row['name'],
-                "image" => $row['image'],
-            ];
+
+//            $items[] = [
+//                "id" => $row['id'],
+//                "name" => $row['name'],
+//                "image" => $row['image'],
+//            ];
+//            $items[] = [
+//                "id" => $row['id'],
+//                "name" => $row['name'],
+//                "image" => $row['image'],
+//            ];
         }
         echo json_encode($items);
     }
