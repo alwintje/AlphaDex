@@ -15,7 +15,19 @@
     <!-- ?attr/colorPrimary -->
     </android.support.design.widget.AppBarLayout>
 
+
     <include layout="@layout/content_main" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/loader"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
 
     <!--<android.support.design.widget.FloatingActionButton android:id="@+id/fab"-->
         <!--android:layout_width="wrap_content" android:layout_height="wrap_content"-->

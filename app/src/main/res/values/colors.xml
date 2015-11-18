@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#FFE3350D</color>
     <color name="colorPrimaryDark">#9e2307</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <color name="colorAccent">#FFE3350D</color>
 
     <color name="colorPokemonBlue">#FF1B53BA</color>
     <color name="colorPokemonGreen">#FF4DAD5B</color>
