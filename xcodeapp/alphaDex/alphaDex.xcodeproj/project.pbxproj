@@ -80,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4981B1381BFC692C00EF72B8 /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				8C968EEF1BF9FF1C00D0205F /* SWRevealViewController.h */,
+				8C968EF01BF9FF1C00D0205F /* SWRevealViewController.m */,
+			);
+			name = objc;
+			sourceTree = "<group>";
+		};
 		8C968EB41BF9E5B000D0205F = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				8C968EF21BFA020300D0205F /* backTableTableViewController.swift */,
-				8C968EEF1BF9FF1C00D0205F /* SWRevealViewController.h */,
-				8C968EF01BF9FF1C00D0205F /* SWRevealViewController.m */,
+				4981B1381BFC692C00EF72B8 /* objc */,
 				8C968EC01BF9E5B000D0205F /* AppDelegate.swift */,
 				8C968EC21BF9E5B000D0205F /* ViewController.swift */,
 				8C968EC41BF9E5B000D0205F /* Main.storyboard */,
