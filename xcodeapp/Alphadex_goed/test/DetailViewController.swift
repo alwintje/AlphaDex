@@ -9,40 +9,47 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var detailImageView: UIImageView!
-
+    
+    var visualEffectView: UIVisualEffectView!   // Hierin wordt de 'pointer' naar je visualEffectView opgeslagen.
+    // Dit is een "implicitly unwrapped optional".
     
     var image = UIImage()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       self.detailImageView.image = self.image
         
-        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark)) as UIVisualEffectView
+        self.detailImageView.image = self.image
         
-        visualEffectView.frame = detailImageView.bounds
+        visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
         
         detailImageView.addSubview(visualEffectView)
         
     }
-
+    
+    
+    override func viewDidLayoutSubviews() {
+        // Pas nu heeft detailImageView.bounds de juiste waarden: Auto Layout is klaar.
+        visualEffectView.frame = detailImageView.bounds
+        view.setNeedsLayout()   // Laat deze regel maar eens weg en kijk wat er gebeurt ;)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
