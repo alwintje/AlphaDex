@@ -29,6 +29,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         self.detailImageView.image = self.image
         
         visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
