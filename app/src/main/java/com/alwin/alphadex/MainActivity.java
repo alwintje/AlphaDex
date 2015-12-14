@@ -51,7 +51,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 //    public static String websiteAdres = "http://192.168.1.58/school/alphaDex/api.php";
-    public static String websiteAdres = "http://172.20.99.49/school/alphaDex/api.php";
+    public static String websiteAdres = "http://10.125.100.129/school/alphaDex/api.php";
 
 //    private GridView imageGrid;
 //    private ArrayList<Bitmap> bitmapList;
@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    private static String convertInputStreamToString(InputStream inputStream) throws IOException {
+    public static String convertInputStreamToString(InputStream inputStream) throws IOException {
         BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
         String line = "";
         String result = "";
@@ -340,7 +340,7 @@ public class MainActivity extends AppCompatActivity
         loader.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
-    private Bitmap urlImageToBitmap(String imageUrl) throws Exception {
+    public static Bitmap urlImageToBitmap(String imageUrl) throws Exception {
         Bitmap result = null;
         URL url = new URL(imageUrl);
         if(url != null) {

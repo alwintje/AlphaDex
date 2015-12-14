@@ -8,4 +8,8 @@
 
     <string name="search_hint">Zoeken</string>
     <string name="back">Terug</string>
+
+    <string name="eye_color">Oog kleur</string>
+    <string name="hair_color">haar kleur</string>
+    <string name="birth">Leeftijd</string>
 </resources>
