@@ -11,11 +11,19 @@ import UIKit
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailImageView: UIImageView!
+    @IBOutlet weak var haarKleur: UILabel!
+    @IBOutlet weak var kleurOgen: UILabel!
+    @IBOutlet weak var tier: UILabel!
+    
     
     var visualEffectView: UIVisualEffectView!   // Hierin wordt de 'pointer' naar je visualEffectView opgeslagen.
     // Dit is een "implicitly unwrapped optional".
     
     var image = UIImage()
+    
+    var kleurVanOgen = "Bruin"
+    var kleurVanHaar = "Blond"
+    var tierBenaming = "Legendary"
     
     
     override func viewDidLoad() {
@@ -26,6 +34,19 @@ class DetailViewController: UIViewController {
         visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
         
         detailImageView.addSubview(visualEffectView)
+        
+        
+        let image2 = self.detailImageView.image
+        let imageView = UIImageView(image: image2!.rounded)
+        
+        imageView.frame = CGRect(x: 110, y: 150, width: 150, height: 150)
+        view.addSubview(imageView)
+        
+        
+        self.haarKleur.text = kleurVanHaar
+        self.kleurOgen.text = kleurVanOgen
+        self.tier.text = tierBenaming
+        
         
     }
     
