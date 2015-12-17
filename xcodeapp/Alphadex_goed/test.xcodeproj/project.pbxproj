@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		492C77BC1C1ED35C0096BEB2 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 492C77BB1C1ED35C0096BEB2 /* bg.png */; };
 		493FA3471BFD11A300106262 /* Manon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 493FA3461BFD11A300106262 /* Manon.jpg */; };
+		494BE0581C1EFF38004A986F /* InstellingenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494BE0571C1EFF38004A986F /* InstellingenViewController.swift */; };
 		4981B0FE1BFBB24300EF72B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981B0FD1BFBB24300EF72B8 /* AppDelegate.swift */; };
 		4981B1001BFBB24300EF72B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981B0FF1BFBB24300EF72B8 /* ViewController.swift */; };
 		4981B1031BFBB24300EF72B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4981B1011BFBB24300EF72B8 /* Main.storyboard */; };
@@ -21,7 +22,6 @@
 		4981B1321BFBB4E600EF72B8 /* Sacha.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4981B12F1BFBB4E600EF72B8 /* Sacha.jpg */; };
 		4981B1351BFBB98100EF72B8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981B1341BFBB98100EF72B8 /* DetailViewController.swift */; };
 		4981B13D1BFC6A7200EF72B8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4981B13C1BFC6A7200EF72B8 /* SWRevealViewController.m */; };
-		4981B13F1BFC84B500EF72B8 /* InstellingenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981B13E1BFC84B500EF72B8 /* InstellingenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 /* Begin PBXFileReference section */
 		492C77BB1C1ED35C0096BEB2 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		493FA3461BFD11A300106262 /* Manon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Manon.jpg; sourceTree = "<group>"; };
+		494BE0571C1EFF38004A986F /* InstellingenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstellingenViewController.swift; sourceTree = "<group>"; };
 		4981B0FA1BFBB24300EF72B8 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4981B0FD1BFBB24300EF72B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4981B0FF1BFBB24300EF72B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		4981B13A1BFC6A7200EF72B8 /* test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "test-Bridging-Header.h"; sourceTree = "<group>"; };
 		4981B13B1BFC6A7200EF72B8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		4981B13C1BFC6A7200EF72B8 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		4981B13E1BFC84B500EF72B8 /* InstellingenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstellingenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +118,9 @@
 				4981B1391BFC6A6200EF72B8 /* SWRevealController */,
 				4981B1331BFBB4F100EF72B8 /* Supportingfiles */,
 				4981B0FD1BFBB24300EF72B8 /* AppDelegate.swift */,
+				494BE0571C1EFF38004A986F /* InstellingenViewController.swift */,
 				4981B0FF1BFBB24300EF72B8 /* ViewController.swift */,
 				4981B1011BFBB24300EF72B8 /* Main.storyboard */,
-				4981B13E1BFC84B500EF72B8 /* InstellingenViewController.swift */,
 				4981B12B1BFBB27200EF72B8 /* CollectionvwCell.swift */,
 				4981B1341BFBB98100EF72B8 /* DetailViewController.swift */,
 				4981B1041BFBB24300EF72B8 /* Assets.xcassets */,
@@ -307,7 +307,7 @@
 			files = (
 				4981B1001BFBB24300EF72B8 /* ViewController.swift in Sources */,
 				4981B12C1BFBB27200EF72B8 /* CollectionvwCell.swift in Sources */,
-				4981B13F1BFC84B500EF72B8 /* InstellingenViewController.swift in Sources */,
+				494BE0581C1EFF38004A986F /* InstellingenViewController.swift in Sources */,
 				4981B0FE1BFBB24300EF72B8 /* AppDelegate.swift in Sources */,
 				4981B1351BFBB98100EF72B8 /* DetailViewController.swift in Sources */,
 				4981B13D1BFC6A7200EF72B8 /* SWRevealViewController.m in Sources */,
@@ -453,6 +453,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/test/parse-library-1.10.0",
+				);
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.esyst.test;
@@ -470,6 +474,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/test/parse-library-1.10.0",
+				);
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.esyst.test;
